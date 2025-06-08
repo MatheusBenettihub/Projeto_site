@@ -3,28 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título do site</title>
-    <link rel="stylesheet" href="estilos/style.css">
+    <title>Testando Branch e Merge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+        }
 
+        button {
+            margin: 10px 0;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
     <main>
         <header>
-            <h1>Cursos grátis</h1>
+            <h1>Site de Teste - Branch e Merge</h1>
         </header>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/1538/1538525.png" alt="Ícone de branch" width="100">
         <article>
-            <h2>Artigo 001</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus ratione eius magni quia vel voluptatibus sit commodi voluptatem, esse magnam molestiae exercitationem,
-             laboriosam fugiat aspernatur ipsam cupiditate perferendis explicabo voluptate.</p>
+            <h2>Artigo 001 - O que é uma branch?</h2>
+            <p>Uma branch é uma linha de desenvolvimento separada dentro de um repositório Git. Ela permite que você trabalhe em funcionalidades diferentes sem afetar o código principal.</p>
         </article>
+
+        <!-- ✅ Tucano movido para cá -->
         <header>
-            <h1>Curso css</h1>
+            <h1>Tucano PNG</h1>
         </header>
+        <button onclick="toggleTucano()">Mostrar/Ocultar Tucano</button><br>
+        <img id="tucano" src="imagens site/tucano oficial.png" alt="Tucano PNG" width="150">
+
+        <header>
+            <h1>Trabalhando com Merges</h1>
+        </header>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/4520/4520945.png" alt="Ícone de merge" width="100">
         <article>
-            <h2>Artigo 002</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur natus dolor mollitia ipsa voluptatem. Ratione consequatur est obcaecati! Tenetur
-            consectetur numquam ad voluptas atque repellendus officia ullam ab explicabo incidunt.</p>
+            <h2>Artigo 002 - O que é um merge?</h2>
+            <p>Merge é o processo de unir duas branches. Isso permite que mudanças feitas em uma branch sejam integradas à branch principal ou a outra qualquer.</p>
         </article>
+
+        <header>
+            <h1>Conflitos no Git</h1>
+        </header>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" alt="Ícone de conflito" width="100">
+        <article>
+            <h2>Artigo 003 - E quando há conflito?</h2>
+            <p>Conflitos acontecem quando duas branches alteram a mesma linha de um arquivo. O Git não sabe qual manter, então você precisa resolver manualmente.</p>
+        </article>
+
+        <header>
+            <img src="https://cdn-icons-png.flaticon.com/512/919/919831.png" alt="Logo do Git" width="100">
+        </header>
     </main>
+
+    <footer>
+        <p>Data de hoje: <span id="data-hoje"></span></p>
+    </footer>
+
+    <script>
+        function toggleTucano() {
+            const tucano = document.getElementById("tucano");
+            tucano.style.display = tucano.style.display === "none" ? "block" : "none";
+        }
+
+        // Exibe a data atual no rodapé
+        const data = new Date();
+        const formatada = data.toLocaleDateString("pt-BR");
+        document.getElementById("data-hoje").textContent = formatada;
+    </script>
 </body>
 </html>
